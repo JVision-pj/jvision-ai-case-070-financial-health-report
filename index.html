@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>財務健檢報告所｜Jvision AI Interactive Demo</title>
   <meta name="description" content="自動產生客戶財務狀態、風險與建議報告。" />
-  <link rel="stylesheet" href="./styles.css?v=layout-ledger-light-20260720-contrast-fix-1070" />
+  <link rel="stylesheet" href="./styles.css?v=layout-ledger-light-20260720-stats-contrast-1070" />
 </head>
 <body class="layout-ledger-light" data-layout="ledger-light">
   <main class="shell">
@@ -33,6 +33,9 @@
           <article><small>待處理</small><strong id="openCount">--</strong></article>
           <article><small>高風險</small><strong id="riskCount">--</strong></article>
           <article><small>完成率</small><strong id="doneRate">--</strong></article>
+          <article><small>總案件</small><strong id="totalCount">--</strong></article>
+          <article><small>平均 AI 分數</small><strong id="avgScore">--</strong></article>
+          <article><small>急件</small><strong id="urgentCount">--</strong></article>
         </div>
         <div class="insight">
           <span>AI 建議</span>
@@ -43,6 +46,27 @@
 
     <section class="modules" id="modules" aria-label="功能架構">
       <article><span>01</span><h2>AI 摘要</h2><p>自動整理今日異常、待辦、風險與下一步建議。</p></article><article><span>02</span><h2>風險排序</h2><p>依期限、影響度與資料完整度排序最該先處理的項目。</p></article><article><span>03</span><h2>任務派發</h2><p>把 AI 建議轉成負責人、期限與可追蹤狀態。</p></article><article><span>04</span><h2>營運洞察</h2><p>將每日操作累積成趨勢、瓶頸與改善清單。</p></article>
+    </section>
+
+    <section class="panel analytics-panel" aria-label="AI 營運統計">
+      <div class="panel-title">
+        <span>AI 營運統計</span>
+        <b>Data Pulse</b>
+      </div>
+      <div class="analytics-grid">
+        <article class="analytics-card">
+          <span>風險分布</span>
+          <div class="risk-bars" id="riskBars"></div>
+        </article>
+        <article class="analytics-card">
+          <span>AI 成效估算</span>
+          <div class="impact-grid">
+            <article><small>預估節省工時</small><strong id="savedHours">--</strong></article>
+            <article><small>自動化覆蓋率</small><strong id="automationRate">--</strong></article>
+            <article><small>改善任務</small><strong id="improvementCount">--</strong></article>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="workspace" id="workspace">
@@ -87,6 +111,6 @@
   <script>
     window.DEMO_CONFIG = {"id":1070,"caseNo":"070","name":"財務健檢報告所","category":"金融保險與專業服務","description":"自動產生客戶財務狀態、風險與建議報告。","repoName":"jvision-ai-case-070-financial-health-report","profile":{"object":"審核案件","owner":"案件經理","stages":["待收件","審核中","待補件","已完成"],"risks":["文件缺漏","合約風險","逾期未回","金額異常"],"fields":["客戶","期限","風險","承辦"]},"records":[{"id":"1070-1","title":"審核案件 1","target":"客戶財務健檢報告系統 · 客戶 1","owner":"Yuna","due":"D+12","risk":"合約風險","stage":"待收件","score":67,"priority":"medium","done":false},{"id":"1070-2","title":"審核案件 2","target":"客戶財務健檢報告系統 · 客戶 2","owner":"Kevin","due":"D+4","risk":"逾期未回","stage":"審核中","score":47,"priority":"low","done":false},{"id":"1070-3","title":"審核案件 3","target":"客戶財務健檢報告系統 · 客戶 3","owner":"案件經理","due":"D+8","risk":"金額異常","stage":"待補件","score":74,"priority":"medium","done":false},{"id":"1070-4","title":"審核案件 4","target":"客戶財務健檢報告系統 · 客戶 4","owner":"Aken","due":"D+5","risk":"文件缺漏","stage":"已完成","score":64,"priority":"medium","done":true},{"id":"1070-5","title":"審核案件 5","target":"客戶財務健檢報告系統 · 客戶 5","owner":"Mia","due":"D+4","risk":"合約風險","stage":"待收件","score":39,"priority":"low","done":false},{"id":"1070-6","title":"審核案件 6","target":"客戶財務健檢報告系統 · 客戶 6","owner":"Leo","due":"D+11","risk":"逾期未回","stage":"審核中","score":47,"priority":"low","done":false},{"id":"1070-7","title":"審核案件 7","target":"客戶財務健檢報告系統 · 客戶 7","owner":"Yuna","due":"D+3","risk":"金額異常","stage":"待補件","score":48,"priority":"low","done":false},{"id":"1070-8","title":"審核案件 8","target":"客戶財務健檢報告系統 · 客戶 8","owner":"Kevin","due":"D+14","risk":"文件缺漏","stage":"已完成","score":84,"priority":"high","done":true}],"modules":[{"title":"AI 摘要","text":"自動整理今日異常、待辦、風險與下一步建議。"},{"title":"風險排序","text":"依期限、影響度與資料完整度排序最該先處理的項目。"},{"title":"任務派發","text":"把 AI 建議轉成負責人、期限與可追蹤狀態。"},{"title":"營運洞察","text":"將每日操作累積成趨勢、瓶頸與改善清單。"}]};
   </script>
-  <script src="./app.js?v=interactive-20260720"></script>
+  <script src="./app.js?v=stats-20260720"></script>
 </body>
 </html>
